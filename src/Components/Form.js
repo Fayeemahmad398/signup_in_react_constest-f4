@@ -62,15 +62,12 @@ const Form = () => {
       password.trim() &&
       cnfpassword.trim()
     ) {
-      console.log("one");
       if (password.trim() !== cnfpassword.trim()) {
         setmismatch(true);
         setsuccess(false);
         seterror({});
-        console.log("one1");
       } else {
         setmismatch(false);
-        console.log("one2");
 
         seterror({});
 
@@ -180,7 +177,6 @@ const Form = () => {
           {mismatch ? (
             <p id="mismatch">*Password and Confirm Password does not match </p>
           ) : null}
-          {console.log(error.cnfpassword)}
           {error.cnfpassword && <p>*Enter confirm password please</p>}
 
           {visible2 ? (
@@ -202,7 +198,6 @@ const Form = () => {
         {console.log(mismatch)}
         <button
           onClick={(event) => {
-            console.log("workinf");
             event.preventDefault();
             validateForm();
           }}
